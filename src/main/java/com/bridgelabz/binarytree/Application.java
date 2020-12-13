@@ -10,5 +10,7 @@ public class Application {
         binaryTree.add(70);
         binaryTree.display();
 
+        System.out.println("Size of Binary tree : " + binaryTree.size());
+
     }
 }

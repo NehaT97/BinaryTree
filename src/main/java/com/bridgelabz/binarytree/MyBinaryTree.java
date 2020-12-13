@@ -9,6 +9,7 @@ public class MyBinaryTree<T extends Comparable<T>> {
     public MyBinaryTree() {
     }
 
+    /* Uc1 :Adding Elements To Tree */
     public void add(T key) {
         this.root = addRecursively(root, key);
     }
@@ -29,10 +30,21 @@ public class MyBinaryTree<T extends Comparable<T>> {
         return current;
     }
 
-
     public void display() {
         System.out.println(root);
     }
 
+    /* Uc2: creating Tree for given size */
+    public int size() {
+        return getSizeRecursively(root);
+    }
+
+    private int getSizeRecursively(INode<T> current) {
+        if (Objects.isNull(current)) {
+            return 0;
+        } else {
+            return 1 + getSizeRecursively(current.getLeft()) + getSizeRecursively(current.getRight());
+        }
+    }
 
 }
