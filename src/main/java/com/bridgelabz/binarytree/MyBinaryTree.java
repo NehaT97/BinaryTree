@@ -47,4 +47,29 @@ public class MyBinaryTree<T extends Comparable<T>> {
         }
     }
 
+    /*Uc3: Search Element */
+    public boolean search(T key) {
+        boolean isEleFound = searchRecursively(root, key);
+        if (isEleFound) {
+            System.out.println(key + " is found in binary tree");
+            return true;
+        }
+        System.out.println(key + " is not found in binary tree");
+        return false;
+    }
+
+    private boolean searchRecursively(INode<T> current, T key) {
+        if (Objects.isNull(current)) {
+            return false;
+        }
+        int compareValue = key.compareTo(current.getkey());
+        if (compareValue == 0) {
+            return true;
+        } else if (compareValue > 0) {
+            return searchRecursively(current.getRight(), key);
+        } else {
+            return searchRecursively(current.getLeft(), key);
+        }
+    }
+
 }

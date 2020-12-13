@@ -12,5 +12,8 @@ public class Application {
 
         System.out.println("Size of Binary tree : " + binaryTree.size());
 
+        binaryTree.search(63);
+        binaryTree.search(56);
+
     }
 }
